@@ -1,11 +1,51 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ 
+.list-text{
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  
 }
+
+.img-ed{
+  width: 40px;
+  height: 40px;
+}
+
+.img-ed-1{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.img-ed{
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.button-img{
+  border: none;
+  display: flex;
+  justify-content:flex-end;
+}
+
+.hn{
+  height: 100vh;
+}
+
+.flex-it{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

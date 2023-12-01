@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoList extends Component{
     constructor(props){
@@ -37,8 +37,22 @@ class TodoList extends Component{
     renderTodos(){
         return this.state.items.map((item) => {
             return(
-                <div key={item}>
-                    {item} | <button onClick={this.deleteTodo.bind(this)}>X</button>
+                <div key={item} className="flex-it">
+                    <div className="list-text">
+                        <div>
+                           <img className="img-ed-1" src="icon-book.png" alt="*"/> 
+                        </div>
+                        <div>
+                             {item}
+                        </div>
+                    </div>
+                    <div>
+                        <button onClick={this.deleteTodo.bind(this)} className="button-img"><img className="img-ed" src="icon-delete.svg" alt="delete"/></button>
+                    </div>
+                    
+                    <br />
+                    <br />
+                    
                 </div>
             );
         });
@@ -46,22 +60,34 @@ class TodoList extends Component{
 
     render() {
         return(
-             <div className="container">
-                <h1>TodoList</h1>
-                <form>
+             <div>
+                <div className="container bg-light hn">
+                <br />
+                <br />
+                <h1 className="d-flex justify-content-center">TodoList &#128187;</h1>
+                <br />
+                <div className="input-group">
                     <input 
+                        className="form-control"
                         value={this.state.userInput} 
                         placeholder="Entrez une tache"
                         onChange={this.onChange.bind(this)}>                        
                     </input>
-                    <button 
+                    <div className="input-group-append">
+                        <button 
+                        className="btn btn-primary"
                         type="submit"
                         onClick={this.addTodo.bind(this)}>Ajouter
-                    </button>
-                    <div className="list">
-                        {this.renderTodos()}
+                        </button>
                     </div>
-                </form>
+
+                </div>
+                <br />
+                <br/>
+                <div>
+                    {this.renderTodos()}
+                    </div>
+                </div>
             </div>
             
         );
